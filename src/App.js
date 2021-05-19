@@ -1,6 +1,6 @@
 import {useEffect} from 'react';
 import "./App.css";
-import useWebAnimations from "@wellyshen/use-web-animations";
+import useWebAnimations from '@wellyshen/use-web-animations';
 
 const App = () => {
   /* Background animations */
@@ -87,11 +87,10 @@ const App = () => {
 	};
 
   useEffect(() => {
-		
-		background1Movement.getAnimation().currentTime =
-		background1Movement.getAnimation().effect.getTiming().duration / 2;
+    background1Movement.getAnimation().currentTime =
+		background1Movement.getAnimation().effect.getTiming().duration / 2|0;
 		foreground1Movement.getAnimation().currentTime =
-		foreground1Movement.getAnimation().effect.getTiming().duration / 2;
+		foreground1Movement.getAnimation().effect.getTiming().duration / 2|0;
 
 		adjustBackgroundPlayback();
 
@@ -107,7 +106,7 @@ const App = () => {
 
 		}, 3000);
 
-	}, [])
+	})
 
 
 	function goFaster() {
@@ -141,7 +140,7 @@ const App = () => {
         />
       </div>
 
-      <div className="scenery" id="foreground2" ref={background2Movement.ref}>
+      <div className="scenery" id="foreground2" ref={foreground2Movement.ref}>
         <img
           id="bush"
           src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/641/bush_small.png"
